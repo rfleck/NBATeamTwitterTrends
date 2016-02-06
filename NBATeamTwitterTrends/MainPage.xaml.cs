@@ -33,14 +33,14 @@ namespace NBATeamTwitterTrends
         public async void loadTwitterResultsforFavoriteTeam()
         {
             TwitterSearchViewModel favoriteTeamSearch = new TwitterSearchViewModel();
-            await favoriteTeamSearch.OpenTwitterConnection(App.favoriteTeam, 10);
+            await favoriteTeamSearch.OpenTwitterConnection(App.favoriteTeam, 30);
             this.tweetsForFavoriteTeam.ItemsSource = favoriteTeamSearch.tweetList; 
         }
 
         public async void loadTwitterResultsforAllTeams()
         {
             TwitterSearchViewModel allNBASearch = new TwitterSearchViewModel();
-            await allNBASearch.OpenTwitterConnection("NBA", 20);
+            await allNBASearch.OpenTwitterConnection("NBA", 30);
             this.tweetsForAllTeams.ItemsSource = allNBASearch.tweetList;
         }
         /// <summary>

@@ -22,7 +22,6 @@
                                 <TextBlock FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="WrapWholeWords">
                                     <Run Text="Tweet: " Foreground = "Cyan" />
                                     <Run Text="{Binding tweetContent}" Foreground = "White"/>
-                                    <Run Text="----------------------------" Foreground = "White"/>
                                 </TextBlock>   
                             </StackPanel>
                         </DataTemplate>
@@ -41,7 +40,6 @@
                                 <TextBlock FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="WrapWholeWords">
                                         <Run Text="Tweet: " Foreground = "Cyan" />
                                         <Run Text="{Binding tweetContent}" Foreground = "White"/>
-                                        <Run Text="----------------------------" Foreground = "White"/>
                                 </TextBlock>
                             </StackPanel>
                         </DataTemplate>
