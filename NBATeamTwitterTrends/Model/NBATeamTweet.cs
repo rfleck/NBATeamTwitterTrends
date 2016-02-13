@@ -10,5 +10,6 @@ namespace NBATeamTwitterTrends.Model
     {
         public string tweetUser { get; set; }
         public string tweetContent { get; set; }
+        public string tweetImage { get; set; }
     }
 }

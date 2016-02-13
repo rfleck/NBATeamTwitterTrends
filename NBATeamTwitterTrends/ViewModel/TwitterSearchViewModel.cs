@@ -41,7 +41,11 @@ namespace NBATeamTwitterTrends.ViewModel
                 List<Status> searchResults = searchResponse.Statuses.ToList();
                 foreach (var tweet in searchResults)
                 {
-                    tweetList.Add(new NBATeamTweet() { tweetUser = tweet.User.ScreenNameResponse, tweetContent = tweet.Text });
+                    tweet.IncludeRetweets = false;
+                    tweet.IncludeUserEntities = true;
+                    tweet.User.ShowAllInlineMedia = true;
+                    tweet.User.ImageSize = ProfileImageSize.Normal;
+                    tweetList.Add(new NBATeamTweet() { tweetUser = tweet.User.ScreenNameResponse , tweetContent = tweet.Text, tweetImage = tweet.User.ProfileImageUrl });
                 }
             }
         }

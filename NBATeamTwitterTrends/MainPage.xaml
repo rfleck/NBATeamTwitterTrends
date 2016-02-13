@@ -12,37 +12,65 @@
         <Pivot Title="NBA Team - Twitter Trends" FontSize="28">
             <PivotItem Header="My NBA Team">
                 <ListView x:Name="tweetsForFavoriteTeam" HorizontalAlignment = "Left" VerticalAlignment="Top" ShowsScrollingPlaceholders="True">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel>
-                                <TextBlock FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <ListView.Resources>
+                        <DataTemplate x:Key="MyTeamCell">
+                            <Border BorderBrush="White"  BorderThickness="1,1,1,1" >
+                                <StackPanel>
+                                    <Image Source="{Binding tweetImage}" Stretch="None" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                    <TextBlock FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap">
                                     <Run Text="From: " Foreground = "Cyan" />
                                     <Run Text="{Binding tweetUser}" Foreground = "White"/>
-                                </TextBlock>
-                                <TextBlock FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="WrapWholeWords">
+                                    </TextBlock>
+                                    <TextBlock FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap">
                                     <Run Text="Tweet: " Foreground = "Cyan" />
                                     <Run Text="{Binding tweetContent}" Foreground = "White"/>
-                                </TextBlock>   
-                            </StackPanel>
+                                    </TextBlock>
+                                </StackPanel>
+                            </Border>
                         </DataTemplate>
+                    </ListView.Resources>
+
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            <Setter Property="VerticalContentAlignment" Value="Center" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+
+                    <ListView.ItemTemplate>
+                        <StaticResource ResourceKey="MyTeamCell"/>
                     </ListView.ItemTemplate>
                 </ListView>
             </PivotItem>
             <PivotItem Header="All NBA Teams">
                 <ListView x:Name="tweetsForAllTeams"  HorizontalAlignment = "Left" VerticalAlignment="Top">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel>
-                                <TextBlock FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center">
-                                        <Run Text="From: " Foreground = "Cyan" />
-                                        <Run Text="{Binding tweetUser}" Foreground = "White"/>
-                                </TextBlock>
-                                <TextBlock FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="WrapWholeWords">
-                                        <Run Text="Tweet: " Foreground = "Cyan" />
-                                        <Run Text="{Binding tweetContent}" Foreground = "White"/>
-                                </TextBlock>
-                            </StackPanel>
+                    <ListView.Resources>
+                        <DataTemplate x:Key="AllTeamsCell">
+                            <Border BorderBrush="White"  BorderThickness="1,1,1,1" >
+                                <StackPanel>
+                                    <Image Source="{Binding tweetImage}" Stretch="None" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                    <TextBlock FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap">
+                                    <Run Text="From: " Foreground = "Cyan" />
+                                    <Run Text="{Binding tweetUser}" Foreground = "White"/>
+                                    </TextBlock>
+                                    <TextBlock FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap">
+                                    <Run Text="Tweet: " Foreground = "Cyan" />
+                                    <Run Text="{Binding tweetContent}" Foreground = "White"/>
+                                    </TextBlock>
+                                </StackPanel>
+                            </Border>
                         </DataTemplate>
+                    </ListView.Resources>
+
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            <Setter Property="VerticalContentAlignment" Value="Center" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+
+                    <ListView.ItemTemplate>
+                        <StaticResource ResourceKey="AllTeamsCell"/>
                     </ListView.ItemTemplate>
                 </ListView>
             </PivotItem>
