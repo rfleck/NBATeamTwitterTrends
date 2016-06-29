@@ -9,6 +9,7 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Phone.UI.Input;
 using Windows.Storage;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -35,18 +36,10 @@ namespace NBATeamTwitterTrends
         public AddChangeFavorite()
         {
             this.InitializeComponent();
-            HardwareButtons.BackPressed += HardwareButtons_BackPressed;
+            //HardwareButtons.BackPressed += HardwareButtons_BackPressed;
+            //register back request event for current view
         }
-
-        private void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)
-        {
-            //throw new NotImplementedException();
-            if (Frame.CanGoBack)
-                Frame.GoBack();
-
-            e.Handled = true;
-        }
-
+        
         /// <summary>
         /// Invoked when this page is about to be displayed in a Frame.
         /// </summary>
@@ -57,6 +50,7 @@ namespace NBATeamTwitterTrends
             // Prepare List with Favorite Team Saved
             // Load list of Teams Available for User Choice
             this.InitiateTeamList();
+
         }
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)

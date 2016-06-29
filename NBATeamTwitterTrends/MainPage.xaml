@@ -18,12 +18,12 @@
                                 <StackPanel>
                                     <Image Source="{Binding tweetImage}" Stretch="None" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                                     <TextBlock FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap">
-                                    <Run Text="From: " Foreground = "Cyan" />
-                                    <Run Text="{Binding tweetUser}" Foreground = "White"/>
+                                    <Run Text="From: " Foreground = "Orange" />
+                                    <Run Text="{Binding tweetUser}" Foreground = "Orange"/>
                                     </TextBlock>
                                     <TextBlock FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap">
-                                    <Run Text="Tweet: " Foreground = "Cyan" />
-                                    <Run Text="{Binding tweetContent}" Foreground = "White"/>
+                                    <Run Text="Tweet: " Foreground = "Orange" />
+                                    <Run Text="{Binding tweetContent}" Foreground = "Orange"/>
                                     </TextBlock>
                                 </StackPanel>
                             </Border>
@@ -50,12 +50,12 @@
                                 <StackPanel>
                                     <Image Source="{Binding tweetImage}" Stretch="None" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                                     <TextBlock FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap">
-                                    <Run Text="From: " Foreground = "Cyan" />
-                                    <Run Text="{Binding tweetUser}" Foreground = "White"/>
+                                    <Run Text="From: " Foreground = "Orange" />
+                                    <Run Text="{Binding tweetUser}" Foreground = "Orange"/>
                                     </TextBlock>
                                     <TextBlock FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap">
-                                    <Run Text="Tweet: " Foreground = "Cyan" />
-                                    <Run Text="{Binding tweetContent}" Foreground = "White"/>
+                                    <Run Text="Tweet: " Foreground = "Orange" />
+                                    <Run Text="{Binding tweetContent}" Foreground = "Orange"/>
                                     </TextBlock>
                                 </StackPanel>
                             </Border>

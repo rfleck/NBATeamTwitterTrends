@@ -1,35 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="c5433d79-61f8-45f7-a964-0c6ef7e9f602" Publisher="CN=rfleck" Version="1.0.0.0" />
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
+  <Identity Name="NBATeamTwitterTrends" Publisher="CN=rfleck" Version="2.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="c5433d79-61f8-45f7-a964-0c6ef7e9f602" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>NBATeamTwitterTrends</DisplayName>
     <PublisherDisplayName>rfleck</PublisherDisplayName>
-    <Logo>Assets\AppStoreLogo50_50.png</Logo>
+    <Logo>Assets\storeLogo-sdk.png</Logo>
   </Properties>
-  <Prerequisites>
-    <OSMinVersion>6.3.1</OSMinVersion>
-    <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
-  </Prerequisites>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.10586.0" MaxVersionTested="10.0.10586.0" />
+  </Dependencies>
   <Resources>
     <Resource Language="x-generate" />
+    <Resource uap:Scale="180" />
+    <Resource uap:DXFeatureLevel="dx11" />
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="NBATeamTwitterTrends.App">
-      <m3:VisualElements DisplayName="NBA Twitter Trends" Square150x150Logo="Assets\AppSquareLogo150_150.png" Square44x44Logo="Assets\AppLogo44_44.png" Description="NBATeamTwitterTrends" ForegroundText="light" BackgroundColor="transparent">
-        <m3:LockScreen Notification="badge" BadgeLogo="Assets\AppBadgeLogo24_24.png" />
-        <m3:DefaultTile Wide310x150Logo="Assets\AppLogo310_150.png" Square71x71Logo="Assets\AppSquareLogo71_71.png">
-        </m3:DefaultTile>
-        <m3:SplashScreen Image="Assets\AppSplashScreen480_800.png" />
-        <m3:InitialRotationPreference>
-          <m3:Rotation Preference="portrait" />
-          <m3:Rotation Preference="landscape" />
-          <m3:Rotation Preference="landscapeFlipped" />
-        </m3:InitialRotationPreference>
-      </m3:VisualElements>
+      <uap:VisualElements DisplayName="NBA Twitter Trends" Square150x150Logo="Assets\squareTile-sdk.png" Square44x44Logo="Assets\smallTile-sdk.png" Description="NBATeamTwitterTrends" BackgroundColor="transparent">
+        <uap:DefaultTile ShortName="NBATeamTwitterTrends">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="Assets\AppSplashScreen480_800.png" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="portrait" />
+          <uap:Rotation Preference="landscape" />
+          <uap:Rotation Preference="landscapeFlipped" />
+        </uap:InitialRotationPreference>
+      </uap:VisualElements>
+      <Extensions>
+        <uap:Extension Category="windows.search" EntryPoint="MyActivateableClassId.baz" />
+        <uap:Extension Category="windows.protocol">
+          <uap:Protocol Name="mailto" DesiredView="useHalf">
+            <uap:DisplayName>MailTo Protocol</uap:DisplayName>
+          </uap:Protocol>
+        </uap:Extension>
+      </Extensions>
     </Application>
   </Applications>
   <Capabilities>
+    <Capability Name="internetClient" />
     <Capability Name="internetClientServer" />
+    <uap:Capability Name="documentsLibrary" />
   </Capabilities>
 </Package>
